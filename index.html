@@ -35,12 +35,12 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   min-height:100vh;
-  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   color:var(--ink);
   background:
-    radial-gradient(circle at 12% 4%, rgba(255,79,167,.24), transparent 32%),
-    radial-gradient(circle at 88% 8%, rgba(183,132,255,.24), transparent 30%),
-    radial-gradient(circle at 50% 44%, rgba(242,198,109,.16), transparent 34%),
+    radial-gradient(circle at 10% 3%, rgba(255,79,167,.24), transparent 32%),
+    radial-gradient(circle at 92% 8%, rgba(183,132,255,.22), transparent 30%),
+    radial-gradient(circle at 50% 42%, rgba(242,198,109,.16), transparent 36%),
     linear-gradient(180deg,#fff7fb 0%, #ffeaf5 44%, #fff9fc 100%);
   overflow-x:hidden;
 }
@@ -53,7 +53,7 @@ body:before{
   background-image:radial-gradient(circle,rgba(255,255,255,.9) 0 1px,transparent 2px);
   background-size:38px 38px;
   mask-image:linear-gradient(to bottom,black,transparent 72%);
-  opacity:.55;
+  opacity:.52;
   z-index:-1;
 }
 
@@ -76,7 +76,7 @@ button{cursor:pointer}
   background:radial-gradient(circle,#fff 0 20%,#ffd1e7 21% 55%,transparent 56%);
   filter:drop-shadow(0 0 10px #ff9dca);
   animation:float 9s infinite ease-in-out;
-  opacity:.8;
+  opacity:.75;
 }
 
 @keyframes float{
@@ -89,7 +89,7 @@ button{cursor:pointer}
   top:0;
   z-index:50;
   padding:10px 14px;
-  background:rgba(255,247,251,.78);
+  background:rgba(255,247,251,.80);
   backdrop-filter:blur(18px);
   border-bottom:1px solid rgba(255,79,167,.13);
 }
@@ -106,44 +106,52 @@ button{cursor:pointer}
 .brand-mini{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
   min-width:0;
   user-select:none;
 }
 
 .brand-mark{
-  width:48px;
-  height:48px;
-  border-radius:18px;
+  width:58px;
+  height:58px;
+  border-radius:20px;
   display:grid;
   place-items:center;
-  background:
-    radial-gradient(circle at 28% 18%, #fff 0 10%, transparent 16%),
-    linear-gradient(145deg,#ffb6dc,#ff4fa7 55%,#b784ff);
-  color:white;
-  font-family:Cambria, Georgia, "Times New Roman", serif;
-  font-size:25px;
-  font-weight:900;
-  box-shadow:0 10px 24px rgba(255,79,167,.24);
-  border:1px solid rgba(255,255,255,.9);
+  overflow:hidden;
+  background:linear-gradient(145deg,#ffe5f2,#ff9ed0 55%,#d9b8ff);
+  box-shadow:0 12px 28px rgba(255,79,167,.20);
+  border:1px solid rgba(255,255,255,.95);
+}
+
+.logo-svg{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.brand-word,
+.hero h1,
+.panel-title,
+.content-head h2,
+.drawer-head h3{
+  font-family: Cambria, Georgia, "Times New Roman", serif;
 }
 
 .brand-word{
-  font-family:Cambria, Georgia, "Times New Roman", serif;
   font-weight:900;
-  font-size:25px;
-  letter-spacing:.09em;
+  font-size:27px;
+  letter-spacing:.08em;
   line-height:1;
   text-transform:uppercase;
-  background:linear-gradient(180deg,#fff3fb 0%,#ffb4d8 24%,#ff5aae 52%,#b83885 78%,#f2c66d 100%);
+  background:linear-gradient(180deg,#fff4fb 0%,#ffb4d8 25%,#ff5aae 52%,#b83885 78%,#f2c66d 100%);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
-  -webkit-text-stroke:.55px rgba(139,39,98,.45);
+  -webkit-text-stroke:.55px rgba(139,39,98,.38);
   text-shadow:
     0 1px 0 rgba(255,255,255,.95),
-    0 3px 0 rgba(255,188,219,.32),
-    0 10px 22px rgba(255,79,167,.22);
+    0 3px 0 rgba(255,188,219,.28),
+    0 10px 22px rgba(255,79,167,.18);
 }
 
 .brand-sub{
@@ -161,15 +169,6 @@ button{cursor:pointer}
   gap:10px;
 }
 
-.icon-btn,.pill-btn{
-  border:1px solid rgba(255,79,167,.18);
-  background:rgba(255,255,255,.76);
-  border-radius:999px;
-  color:var(--ink);
-  box-shadow:0 8px 24px rgba(255,79,167,.12);
-  font-weight:950;
-}
-
 .icon-btn{
   width:46px;
   height:46px;
@@ -177,14 +176,12 @@ button{cursor:pointer}
   place-items:center;
   font-size:18px;
   position:relative;
-}
-
-.pill-btn{
-  padding:13px 16px;
-  background:linear-gradient(135deg,#ff4fa7,#b784ff);
-  color:white;
-  border:0;
-  box-shadow:0 14px 30px rgba(179,84,255,.24);
+  border:1px solid rgba(255,79,167,.18);
+  background:rgba(255,255,255,.80);
+  border-radius:999px;
+  color:var(--ink);
+  box-shadow:0 8px 24px rgba(255,79,167,.12);
+  font-weight:950;
 }
 
 .badge{
@@ -214,7 +211,7 @@ button{cursor:pointer}
   overflow:hidden;
   border-radius:38px;
   padding:34px 22px 30px;
-  background:linear-gradient(135deg,rgba(255,255,255,.74),rgba(255,225,241,.76));
+  background:linear-gradient(135deg,rgba(255,255,255,.76),rgba(255,225,241,.78));
   border:1px solid rgba(255,255,255,.92);
   box-shadow:var(--shadow);
 }
@@ -225,17 +222,17 @@ button{cursor:pointer}
   inset:-60px -80px auto auto;
   width:280px;
   height:280px;
-  background:radial-gradient(circle,rgba(255,79,167,.25),transparent 62%);
+  background:radial-gradient(circle,rgba(255,79,167,.24),transparent 62%);
   border-radius:50%;
 }
 
 .hero-grid{
   position:relative;
   display:grid;
-  grid-template-columns:1fr;
-  gap:20px;
+  grid-template-columns:260px 1fr;
+  gap:22px;
   align-items:center;
-  text-align:center;
+  text-align:left;
 }
 
 .logo-hero{
@@ -245,6 +242,7 @@ button{cursor:pointer}
   border-radius:46px;
   display:grid;
   place-items:center;
+  overflow:hidden;
   background:
     radial-gradient(circle at 30% 20%, rgba(255,255,255,.95), transparent 15%),
     radial-gradient(circle at 76% 20%, rgba(255,255,255,.5), transparent 20%),
@@ -253,33 +251,26 @@ button{cursor:pointer}
   box-shadow:0 22px 60px rgba(255,79,167,.20);
 }
 
-.logo-hero span{
-  font-family:Cambria, Georgia, "Times New Roman", serif;
-  font-weight:900;
-  font-size:92px;
-  letter-spacing:.04em;
-  color:white;
-  text-shadow:
-    0 2px 0 rgba(255,255,255,.8),
-    0 8px 22px rgba(155,39,102,.32);
+.logo-hero .logo-svg{
+  width:100%;
+  height:100%;
 }
 
 .hero h1{
-  font-family:Cambria, Georgia, "Times New Roman", serif;
   margin:0;
-  font-size:clamp(46px,9vw,108px);
+  font-size:clamp(48px,8vw,106px);
   line-height:.9;
-  letter-spacing:.055em;
+  letter-spacing:.052em;
   text-transform:uppercase;
   background:linear-gradient(180deg,#fff5fb 0%,#ffbddc 24%,#ff5aae 50%,#bd3f8d 78%,#f3c76e 100%);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
-  -webkit-text-stroke:1px rgba(133,41,98,.38);
+  -webkit-text-stroke:1px rgba(133,41,98,.34);
   text-shadow:
     0 2px 0 rgba(255,255,255,.96),
-    0 5px 0 rgba(255,193,224,.28),
-    0 18px 32px rgba(255,79,167,.26);
+    0 5px 0 rgba(255,193,224,.25),
+    0 18px 32px rgba(255,79,167,.22);
 }
 
 .hero p{
@@ -287,13 +278,13 @@ button{cursor:pointer}
   color:#7c3c5b;
   max-width:760px;
   line-height:1.55;
-  margin:12px auto 18px;
+  margin:12px 0 18px;
 }
 
 .hero-chips{
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;
+  justify-content:flex-start;
   gap:10px;
 }
 
@@ -312,17 +303,15 @@ button{cursor:pointer}
   margin:14px auto;
   padding:0 14px;
   position:sticky;
-  top:70px;
+  top:78px;
   z-index:40;
 }
 
 .search-card{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:10px;
+  display:block;
   padding:10px;
   border-radius:24px;
-  background:rgba(255,255,255,.75);
+  background:rgba(255,255,255,.78);
   border:1px solid rgba(255,79,167,.16);
   backdrop-filter:blur(16px);
   box-shadow:0 18px 44px rgba(255,79,167,.12);
@@ -333,23 +322,13 @@ button{cursor:pointer}
   border:0;
   outline:0;
   background:transparent;
-  padding:14px 14px;
+  padding:14px;
   font-size:16px;
   color:var(--ink);
-  font-weight:800;
+  font-weight:850;
 }
 
 .search-card input::placeholder{color:#a37087}
-
-.filter-toggle{
-  padding:0 18px;
-  border:0;
-  border-radius:18px;
-  background:linear-gradient(135deg,#ff4fa7,#b784ff);
-  color:#fff;
-  font-weight:950;
-  box-shadow:0 12px 25px rgba(178,75,255,.22);
-}
 
 .main{
   max-width:1280px;
@@ -363,21 +342,28 @@ button{cursor:pointer}
 .filters{
   align-self:start;
   position:sticky;
-  top:150px;
+  top:155px;
   padding:16px;
   border-radius:28px;
-  background:rgba(255,255,255,.68);
+  background:rgba(255,255,255,.70);
   border:1px solid rgba(255,79,167,.14);
   box-shadow:var(--shadow2);
   backdrop-filter:blur(14px);
 }
 
 .panel-title{
-  font-family:Cambria, Georgia, "Times New Roman", serif;
-  font-size:22px;
+  font-size:25px;
   font-weight:900;
   color:#b02c76;
+  margin:0 0 3px;
+  letter-spacing:.02em;
+}
+
+.panel-sub{
   margin:0 0 12px;
+  color:#9a5575;
+  font-size:12px;
+  font-weight:850;
 }
 
 .field{
@@ -389,7 +375,7 @@ button{cursor:pointer}
 .field label{
   font-size:12px;
   text-transform:uppercase;
-  letter-spacing:.15em;
+  letter-spacing:.14em;
   color:#92506e;
   font-weight:950;
 }
@@ -442,9 +428,9 @@ button{cursor:pointer}
 
 .content-head h2{
   margin:0;
-  font-family:Cambria, Georgia, "Times New Roman", serif;
-  font-size:clamp(26px,4vw,42px);
+  font-size:clamp(28px,4vw,46px);
   color:#9b286a;
+  letter-spacing:.02em;
 }
 
 .small{
@@ -465,7 +451,7 @@ button{cursor:pointer}
 .tab{
   flex:0 0 auto;
   border:1px solid rgba(255,79,167,.18);
-  background:rgba(255,255,255,.75);
+  background:rgba(255,255,255,.78);
   border-radius:999px;
   padding:12px 15px;
   color:#8a3158;
@@ -489,10 +475,10 @@ button{cursor:pointer}
 .mini-card{
   position:relative;
   overflow:hidden;
-  min-height:128px;
+  min-height:132px;
   border-radius:26px;
   padding:14px;
-  background:linear-gradient(135deg,rgba(255,255,255,.76),rgba(255,217,237,.78));
+  background:linear-gradient(135deg,rgba(255,255,255,.78),rgba(255,217,237,.80));
   border:1px solid rgba(255,255,255,.92);
   box-shadow:var(--shadow2);
 }
@@ -500,7 +486,7 @@ button{cursor:pointer}
 .mini-card b{
   display:block;
   font-family:Cambria, Georgia, "Times New Roman", serif;
-  font-size:18px;
+  font-size:19px;
   color:#a92c72;
 }
 
@@ -508,6 +494,15 @@ button{cursor:pointer}
   font-weight:850;
   color:#87536a;
   font-size:13px;
+}
+
+.mini-card small{
+  display:block;
+  margin-top:7px;
+  color:#9b6c7f;
+  font-weight:800;
+  font-size:12px;
+  line-height:1.25;
 }
 
 .mini-card:after{
@@ -529,7 +524,7 @@ button{cursor:pointer}
   position:relative;
   overflow:hidden;
   border-radius:30px;
-  background:rgba(255,255,255,.76);
+  background:rgba(255,255,255,.78);
   border:1px solid rgba(255,255,255,.95);
   box-shadow:var(--shadow2);
   display:flex;
@@ -585,8 +580,14 @@ button{cursor:pointer}
   height:38px;
   border:0;
   border-radius:50%;
-  background:rgba(255,255,255,.84);
+  background:rgba(255,255,255,.88);
   box-shadow:0 8px 18px rgba(255,79,167,.14);
+  font-size:19px;
+}
+
+.heart.active{
+  background:linear-gradient(135deg,#ff4fa7,#b784ff);
+  color:white;
 }
 
 .info{
@@ -703,7 +704,7 @@ button{cursor:pointer}
   position:fixed;
   top:0;
   right:0;
-  width:min(440px,92vw);
+  width:min(460px,94vw);
   height:100%;
   z-index:90;
   transform:translateX(110%);
@@ -726,9 +727,8 @@ button{cursor:pointer}
 }
 
 .drawer-head h3{
-  font-family:Cambria, Georgia, "Times New Roman", serif;
   margin:0;
-  font-size:26px;
+  font-size:28px;
   color:#a72c72;
 }
 
@@ -740,7 +740,7 @@ button{cursor:pointer}
 
 .cart-item{
   display:grid;
-  grid-template-columns:64px 1fr auto;
+  grid-template-columns:64px 1fr;
   gap:10px;
   align-items:center;
   margin-bottom:10px;
@@ -771,14 +771,43 @@ button{cursor:pointer}
   margin-top:4px;
 }
 
-.remove{
-  width:32px;
-  height:32px;
+.cart-controls{
+  grid-column:1/-1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:8px;
+}
+
+.qty-box{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.qty-btn,.remove{
+  width:34px;
+  height:34px;
   border:0;
   border-radius:50%;
   background:#ffe3ef;
   color:#b32668;
   font-weight:950;
+  display:grid;
+  place-items:center;
+}
+
+.qty-number{
+  min-width:34px;
+  height:34px;
+  border-radius:999px;
+  background:#fff5fa;
+  border:1px solid rgba(255,79,167,.14);
+  display:grid;
+  place-items:center;
+  font-weight:950;
+  color:#812d55;
 }
 
 .drawer-foot{
@@ -816,6 +845,11 @@ body.admin-on .admin{display:block}
   flex-wrap:wrap;
   gap:10px;
   margin-top:10px;
+}
+
+.admin-actions .add{
+  width:auto;
+  padding:13px 16px;
 }
 
 #adminText{
@@ -867,44 +901,45 @@ body.admin-on .admin{display:block}
   font-size:13px;
 }
 
-@media(max-width:1100px){
+@media(max-width:1180px){
   .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .showcase{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 
-@media(max-width:840px){
-  .brand-sub{display:none}
-  .main{display:block}
-  .filters{
-    position:fixed;
-    left:12px;
-    right:12px;
-    bottom:12px;
-    top:auto;
-    z-index:70;
-    max-height:72vh;
-    overflow:auto;
-    transform:translateY(115%);
-    transition:.25s;
+@media(max-width:900px){
+  .hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
   }
-  .filters.open{transform:translateY(0)}
+  .hero p{margin-left:auto;margin-right:auto}
+  .hero-chips{justify-content:center}
+  .main{
+    display:block;
+  }
+  .filters{
+    position:relative;
+    top:auto;
+    margin-bottom:18px;
+  }
   .showcase{grid-template-columns:repeat(2,1fr)}
   .grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .search-zone{top:68px}
+  .search-zone{top:78px}
   .content-head{margin-top:12px}
 }
 
-@media(max-width:540px){
-  .brand-word{font-size:20px}
-  .brand-mark{width:42px;height:42px;border-radius:15px}
-  .pill-btn{display:none}
-  .hero-card{border-radius:30px;padding:26px 14px}
+@media(max-width:600px){
+  .appbar{padding:8px 10px}
+  .brand-mark{width:48px;height:48px;border-radius:17px}
+  .brand-word{font-size:21px}
+  .brand-sub{font-size:9px;letter-spacing:.16em}
+  .hero{margin-top:12px;padding:0 10px}
+  .hero-card{border-radius:30px;padding:24px 14px}
   .logo-hero{width:170px;height:170px;border-radius:36px}
-  .logo-hero span{font-size:68px}
   .hero h1{font-size:clamp(44px,15vw,72px)}
   .hero p{text-align:center}
-  .search-card{grid-template-columns:1fr auto}
-  .filter-toggle{padding:0 14px}
+  .search-zone{padding:0 10px;top:66px}
+  .main{padding:0 10px 100px}
+  .filters{border-radius:24px}
   .showcase{grid-template-columns:1fr 1fr}
   .grid{grid-template-columns:1fr 1fr}
   .card{border-radius:24px}
@@ -912,10 +947,12 @@ body.admin-on .admin{display:block}
   .price{font-size:17px}
   .meta span{font-size:11px;padding:5px 7px}
   .add{padding:12px}
+  .content-head h2{font-size:30px}
 }
 
 @media(max-width:390px){
   .grid{grid-template-columns:1fr}
+  .showcase{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -926,7 +963,7 @@ body.admin-on .admin{display:block}
 <header class="appbar">
   <div class="appbar-inner">
     <div class="brand-mini" id="secretAdmin" title="VELORA">
-      <div class="brand-mark">V</div>
+      <div class="brand-mark" id="brandLogo"></div>
       <div>
         <div class="brand-word">VELORA</div>
         <div class="brand-sub">Boutique de Perfumes</div>
@@ -934,7 +971,6 @@ body.admin-on .admin{display:block}
     </div>
 
     <div class="quick-actions">
-      <button class="pill-btn" type="button" onclick="scrollToCatalog()">Explorar</button>
       <button class="icon-btn" type="button" onclick="openCart()" aria-label="Abrir carrito">
         🛒 <span class="badge" id="cartCount">0</span>
       </button>
@@ -945,7 +981,7 @@ body.admin-on .admin{display:block}
 <section class="hero">
   <div class="hero-card">
     <div class="hero-grid">
-      <div class="logo-hero" aria-hidden="true"><span>V</span></div>
+      <div class="logo-hero" id="heroLogo" aria-hidden="true"></div>
       <div>
         <h1>VELORA</h1>
         <p>Una boutique de perfumes femenina, brillante y elegante. Explora fragancias por marca, género y estilo; agrega al carrito y envía tu pedido directo por WhatsApp.</p>
@@ -963,13 +999,13 @@ body.admin-on .admin{display:block}
 <section class="search-zone">
   <div class="search-card">
     <input id="search" type="search" placeholder="Buscar perfume, marca o estilo..." autocomplete="off" />
-    <button class="filter-toggle" type="button" onclick="toggleFilters()">Filtros</button>
   </div>
 </section>
 
 <section class="main" id="catalogo">
   <aside class="filters" id="filters">
     <h3 class="panel-title">Filtros VELORA</h3>
+    <p class="panel-sub">Encuentra tu fragancia ideal</p>
 
     <div class="segment">
       <button class="seg active" type="button" data-gender="all">Todos</button>
@@ -1039,12 +1075,12 @@ body.admin-on .admin{display:block}
     <h3 class="panel-title">Panel admin oculto</h3>
     <p class="small">Pega líneas en formato: Marca | Perfume | ML | Género | Precio/Nota | Imagen</p>
     <div class="field">
-      <textarea id="adminText" placeholder="Lattafa | Yara Candy | 100ml | Mujer | RD$3,950 | https://..."></textarea>
+      <textarea id="adminText" placeholder="Lattafa | Yara Candy | 100ml | Mujer | Consultar vía WhatsApp | https://..."></textarea>
     </div>
     <div class="admin-actions">
-      <button class="pill-btn" type="button" onclick="importAdmin()">Importar</button>
-      <button class="pill-btn" type="button" onclick="exportTxt()">Exportar TXT</button>
-      <button class="pill-btn" type="button" onclick="localStorage.removeItem('veloraCatalog');location.reload()">Restaurar archivo</button>
+      <button class="add" type="button" onclick="importAdmin()">Importar</button>
+      <button class="add" type="button" onclick="exportTxt()">Exportar TXT</button>
+      <button class="add" type="button" onclick="localStorage.removeItem('veloraCatalog');location.reload()">Restaurar archivo</button>
     </div>
   </div>
 </section>
@@ -1062,7 +1098,7 @@ body.admin-on .admin{display:block}
   <div class="drawer-foot">
     <div class="total-line">
       <span>Total estimado</span>
-      <span id="total">RD$0</span>
+      <span id="total">A consultar</span>
     </div>
     <button class="add" type="button" onclick="sendWhatsApp()">Enviar pedido por WhatsApp</button>
   </div>
@@ -1084,17 +1120,26 @@ const ADMIN_SECRET = "Velora 2026";
 const LOGO_SVG = encodeURIComponent(`
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
   <defs>
-    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-      <stop stop-color="#ffd6eb"/>
-      <stop offset=".45" stop-color="#ff7fca"/>
-      <stop offset=".78" stop-color="#c99bff"/>
-      <stop offset="1" stop-color="#ffe3a0"/>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#ffe4f2"/>
+      <stop offset=".38" stop-color="#ff88c6"/>
+      <stop offset=".72" stop-color="#cba2ff"/>
+      <stop offset="1" stop-color="#ffe6a8"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#fff8fd"/>
+      <stop offset=".32" stop-color="#ffb9dc"/>
+      <stop offset=".67" stop-color="#ff4fa7"/>
+      <stop offset="1" stop-color="#b83885"/>
     </linearGradient>
   </defs>
-  <rect width="600" height="600" rx="130" fill="url(#g)"/>
-  <circle cx="178" cy="120" r="34" fill="#fff" opacity=".9"/>
-  <text x="50%" y="55%" text-anchor="middle" font-size="230" font-family="Georgia,serif" font-weight="900" fill="white">V</text>
-  <text x="50%" y="73%" text-anchor="middle" font-size="54" font-family="Georgia,serif" font-weight="900" fill="white">VELORA</text>
+  <rect width="600" height="600" rx="135" fill="url(#bg)"/>
+  <circle cx="170" cy="128" r="34" fill="#fff" opacity=".75"/>
+  <circle cx="440" cy="150" r="18" fill="#fff" opacity=".42"/>
+  <path d="M300 82 C352 142 430 146 430 244 C430 324 363 386 300 442 C237 386 170 324 170 244 C170 146 248 142 300 82Z" fill="rgba(255,255,255,.28)" stroke="rgba(255,255,255,.72)" stroke-width="8"/>
+  <text x="300" y="318" text-anchor="middle" font-family="Georgia, Cambria, serif" font-size="176" font-weight="900" fill="white" stroke="#cc4d99" stroke-width="3">V</text>
+  <text x="300" y="472" text-anchor="middle" font-family="Georgia, Cambria, serif" font-size="62" font-weight="900" letter-spacing="8" fill="url(#txt)" stroke="rgba(255,255,255,.75)" stroke-width="2">VELORA</text>
+  <text x="300" y="516" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="6" fill="#7d3156">BOUTIQUE DE PERFUMES</text>
 </svg>
 `);
 
@@ -1109,9 +1154,22 @@ const PRICING = {
   g4:1300
 };
 
+const BEST_WOMEN = [
+  "yara","yara candy","good girl","delina","born in roma","libre","black opium","la belle","daisy","sweet tooth","burberry goddess","gucci bloom","scandal","bright crystal","rose goldea"
+];
+
+const BEST_MEN = [
+  "asad","hawas","club de nuit intense","9 pm","le beau","sauvage","eros","y le parfum","invictus","one million","ultra male","scandal for men","prada l'homme","legend spirit"
+];
+
+const BEST_UNISEX = [
+  "khamrah","baccarat","amber oud","erba pura","instant crush","oud for greatness","naxos","tribeca","greenwich","oud","arabians tonka","liquid brun","vulcan"
+];
+
 let allProducts = [];
 let filtered = [];
 let cart = [];
+let favorites = [];
 let activeGender = "all";
 let activeSection = "all";
 
@@ -1154,7 +1212,7 @@ function idFrom(p,i){
 
 function detectConcentration(name){
   const s = cleanText(name).toUpperCase();
-  const types = ["EXTRAIT","ELIXIR","PARFUM","EDP","EDT","COLOGNE","INTENSE"];
+  const types = ["EXTRAIT","ELIXIR","PARFUM","EDP","EDT","COLOGNE","INTENSE","ABSOLU"];
   for(const t of types){
     if(new RegExp("\\b"+t+"\\b","i").test(s)) return t;
   }
@@ -1166,7 +1224,6 @@ function normalize(p,i){
   let explicitPrice = Number(String(p.precioPublico || "").replace(/[^0-9.]/g,""));
   let price = explicitPrice || (cost ? publicPrice(cost) : 0);
   let note = p.note || p.nota || "";
-  if(price && (!note || /consultar/i.test(note))) note = money(price);
   if(!note) note = DEFAULT_NOTE;
 
   return {
@@ -1203,7 +1260,7 @@ function parseCatalog(text){
   for(let i=0;i<lines.length;i++){
     let parts = lines[i].split(/[|｜¦│]/).map(x=>x.trim());
     if(parts.length >= 4){
-      let priceRaw = parts[4] || "";
+      let priceRaw = parts[4] || DEFAULT_NOTE;
       let num = Number(String(priceRaw).replace(/[^0-9.]/g,""));
       arr.push(normalize({
         brand:parts[0],
@@ -1221,7 +1278,11 @@ function parseCatalog(text){
 }
 
 async function loadCatalog(){
+  $("brandLogo").innerHTML = `<img class="logo-svg" src="${LOGO}" alt="VELORA">`;
+  $("heroLogo").innerHTML = `<img class="logo-svg" src="${LOGO}" alt="VELORA">`;
+
   let saved = localStorage.getItem("veloraCatalog");
+  favorites = JSON.parse(localStorage.getItem("veloraFavorites") || "[]");
 
   if(saved){
     allProducts = parseCatalog(saved);
@@ -1309,6 +1370,18 @@ function unlockAdmin(){
   document.body.classList.add("admin-on");
 }
 
+function includesAny(p, list){
+  let s = `${p.brand} ${p.name}`.toLowerCase();
+  return list.some(k=>s.includes(k));
+}
+
+function isBestSeller(p){
+  if(p.gender === "Mujer" && includesAny(p,BEST_WOMEN)) return true;
+  if(p.gender === "Hombre" && includesAny(p,BEST_MEN)) return true;
+  if(p.gender === "Unisex" && includesAny(p,BEST_UNISEX)) return true;
+  return includesAny(p,[...BEST_WOMEN,...BEST_MEN,...BEST_UNISEX]);
+}
+
 function applyFilters(){
   let q = $("search").value.trim().toLowerCase();
   let brand = $("brandFilter").value;
@@ -1331,9 +1404,9 @@ function applyFilters(){
     if(stock === "out" && !out) return false;
 
     if(activeSection === "new" && !p.isNew) return false;
-    if(activeSection === "best" && !low) return false;
-    if(activeSection === "recommended" && p.price && p.price < 2500) return false;
-    if(activeSection === "favorites" && !["Lattafa","Armaf","Afnan","Carolina Herrera","Dior","Versace","YSL","Jean Paul Gaultier","Rasasi"].includes(p.brand)) return false;
+    if(activeSection === "best" && !isBestSeller(p) && !low) return false;
+    if(activeSection === "recommended" && !isRecommended(p)) return false;
+    if(activeSection === "favorites" && !favorites.includes(String(p.id))) return false;
 
     return true;
   });
@@ -1347,36 +1420,51 @@ function applyFilters(){
   render();
 }
 
+function isRecommended(p){
+  const premiumBrands = ["Lattafa","Armaf","Afnan","Rasasi","Carolina Herrera","Dior","Versace","YSL","Jean Paul Gaultier","Bond No. 9","XERJOFF","Parfums de Marly","Maison Alhambra","MANCERA","Maison Francis Kurkdjian","INITIO"];
+  return premiumBrands.includes(p.brand) || isBestSeller(p) || p.isNew;
+}
+
 function render(){
   $("resultInfo").textContent = `${filtered.length} fragancias disponibles en VELORA`;
   $("empty").classList.toggle("hidden", filtered.length > 0);
 
+  const bestWomen = countMatch("Mujer", BEST_WOMEN);
+  const bestMen = countMatch("Hombre", BEST_MEN);
+  const bestUnisex = countMatch("Unisex", BEST_UNISEX);
+
   $("showcase").innerHTML = [
-    {t:"Novedades",d:allProducts.filter(p=>p.isNew).length + " nuevas"},
-    {t:"Mujer",d:allProducts.filter(p=>p.gender==="Mujer").length + " perfumes"},
-    {t:"Hombre",d:allProducts.filter(p=>p.gender==="Hombre").length + " perfumes"},
-    {t:"Unisex",d:allProducts.filter(p=>p.gender==="Unisex").length + " perfumes"},
-    {t:"Pedidos",d:"por WhatsApp"}
+    {t:"Más vendidos Mujer",d:bestWomen + " opciones",s:"Yara · Good Girl · Delina · Libre"},
+    {t:"Más vendidos Hombre",d:bestMen + " opciones",s:"Asad · Hawas · Sauvage · Eros"},
+    {t:"Más vendidos Unisex",d:bestUnisex + " opciones",s:"Khamrah · Baccarat · Amber Oud"},
+    {t:"Novedades",d:allProducts.filter(p=>p.isNew).length + " nuevas",s:"Llegadas recientes"},
+    {t:"Favoritos",d:favorites.length + " guardados",s:"Tus perfumes marcados"}
   ].map(x=>`
     <div class="mini-card">
       <b>${escapeHtml(x.t)}</b>
       <span>${escapeHtml(x.d)}</span>
+      <small>${escapeHtml(x.s)}</small>
     </div>
   `).join("");
 
   $("grid").innerHTML = filtered.map(card).join("");
 }
 
+function countMatch(gender, list){
+  return allProducts.filter(p=>p.gender === gender && includesAny(p,list)).length;
+}
+
 function card(p){
   let out = p.stockStatus === "out_of_stock" || /agotado/i.test(p.stock);
   let low = /pocas|low/i.test(p.stock) || p.stockStatus === "low_stock";
+  let fav = favorites.includes(String(p.id));
 
   return `
   <article class="card">
     <div class="img-wrap">
       <img src="${escapeAttr(p.image || LOGO)}" loading="lazy" decoding="async" onerror="this.src=LOGO" alt="${escapeAttr(p.brand + " " + p.name)}">
-      <span class="ribbon">${p.isNew ? "NEW" : "VELORA"}</span>
-      <button class="heart" type="button" onclick="toast('Guardado en favoritos')">♡</button>
+      <span class="ribbon">${p.isNew ? "NEW" : isBestSeller(p) ? "TOP" : "VELORA"}</span>
+      <button class="heart ${fav ? "active" : ""}" type="button" onclick="toggleFavorite('${escapeAttr(String(p.id))}')">${fav ? "♥" : "♡"}</button>
     </div>
 
     <div class="info">
@@ -1394,7 +1482,7 @@ function card(p){
       </div>
 
       <div class="price-row">
-        <div class="price">${escapeHtml(p.note)}</div>
+        <div class="price">${escapeHtml(p.note || DEFAULT_NOTE)}</div>
       </div>
 
       <button class="add" type="button" ${out ? "disabled" : ""} onclick="addCart('${escapeAttr(String(p.id))}')">
@@ -1402,6 +1490,19 @@ function card(p){
       </button>
     </div>
   </article>`;
+}
+
+function toggleFavorite(id){
+  id = String(id);
+  if(favorites.includes(id)){
+    favorites = favorites.filter(x=>x !== id);
+    toast("Quitado de favoritos");
+  }else{
+    favorites.push(id);
+    toast("Guardado en favoritos");
+  }
+  localStorage.setItem("veloraFavorites", JSON.stringify(favorites));
+  applyFilters();
 }
 
 function addCart(id){
@@ -1416,6 +1517,16 @@ function addCart(id){
   toast("Agregado al carrito");
 }
 
+function changeQty(id, delta){
+  let item = cart.find(x=>String(x.id) === String(id));
+  if(!item) return;
+  item.qty += delta;
+  if(item.qty <= 0){
+    cart = cart.filter(x=>String(x.id) !== String(id));
+  }
+  updateCart();
+}
+
 function updateCart(){
   $("cartCount").textContent = cart.reduce((s,i)=>s+i.qty,0);
 
@@ -1427,14 +1538,21 @@ function updateCart(){
         <img src="${escapeAttr(i.image || LOGO)}" onerror="this.src=LOGO" alt="">
         <div>
           <b>${escapeHtml(i.name)}</b>
-          <span>${escapeHtml(i.brand)} · ${escapeHtml(i.size)} · x${i.qty}</span>
+          <span>${escapeHtml(i.brand)} · ${escapeHtml(i.size)} · ${escapeHtml(i.note || DEFAULT_NOTE)}</span>
         </div>
-        <button class="remove" type="button" onclick="removeCart('${escapeAttr(String(i.id))}')">×</button>
+        <div class="cart-controls">
+          <div class="qty-box">
+            <button class="qty-btn" type="button" onclick="changeQty('${escapeAttr(String(i.id))}',-1)">−</button>
+            <span class="qty-number">${i.qty}</span>
+            <button class="qty-btn" type="button" onclick="changeQty('${escapeAttr(String(i.id))}',1)">+</button>
+          </div>
+          <button class="remove" type="button" onclick="removeCart('${escapeAttr(String(i.id))}')">×</button>
+        </div>
       </div>
     `).join("");
   }
 
-  let hasRealPrices = cart.some(i=>i.price);
+  let hasRealPrices = cart.some(i=>i.price && !/consultar/i.test(i.note || ""));
   $("total").textContent = hasRealPrices ? money(cart.reduce((s,i)=>s+(i.price||0)*i.qty,0)) : "A consultar";
 }
 
@@ -1461,24 +1579,22 @@ function sendWhatsApp(){
   }
 
   let lines = [];
-  lines.push("Hola VELORA, quiero hacer este pedido:");
+  lines.push("Hola VELORA 🌸");
+  lines.push("");
+  lines.push("Quiero consultar este pedido:");
   lines.push("");
 
   cart.forEach(i=>{
-    lines.push(`• ${i.brand} - ${i.name} (${i.size}) x${i.qty} - ${i.note}`);
+    lines.push(`• ${i.brand} - ${i.name} (${i.size}) x${i.qty} - ${i.note || DEFAULT_NOTE}`);
   });
 
   lines.push("");
   lines.push("Total estimado: " + $("total").textContent);
   lines.push("");
-  lines.push("Quedo atento/a a disponibilidad. Gracias.");
+  lines.push("¿Me confirmas precio y disponibilidad?");
 
   let url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n"));
   window.open(url,"_blank");
-}
-
-function toggleFilters(){
-  $("filters").classList.toggle("open");
 }
 
 function clearFilters(){
@@ -1494,10 +1610,6 @@ function clearFilters(){
   });
 
   applyFilters();
-}
-
-function scrollToCatalog(){
-  document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
 }
 
 function importAdmin(){
